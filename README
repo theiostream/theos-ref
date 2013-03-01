@@ -3,6 +3,7 @@ The Theos Documentation (theos-ref)
 For contributing:
 - Please notify theiostream of your intentions. If recommended to contribute, create a fork and make a pull request.
 - Regardless of whether your pull request was merged or deleted, your fork should be deleted unless recommended not to by theiostream.
+- DO NOT FIX GIT'S WHITESPACE WARNINGS ELSE YOU RISK BREAKING THE LINE BREAK SYSTEM.
 
 Licensed under the Creative Commons Attribution-ShareAlike 2.0 Generic License (http://creativecommons.org/licenses/by-sa/2.0/).
 
