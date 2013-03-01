@@ -6,13 +6,13 @@ For general information on *make Variables*, refer to [*Using Variables*](http:/
 
 ## Variable Types and Scope
 
-* **Constants**: Variables whose values should not be changed. They are used for querying the build environment and theos settings. They are valid across all Theos Makefiles.
+* **Constants (%R%)**: Variables whose values should not be changed. They are used for querying the build environment and theos settings. They are valid across all Theos Makefiles.
 
-* **System Variables**: Variables that can be set to modify global state for all instances and sub-instances under a given Makefile. Variables of this sort are shared between make and sub-make instances.
+* **System Variables (%S%)**: Variables that can be set to modify global state for all instances and sub-instances under a given Makefile. Variables of this sort are shared between make and sub-make instances.
 
-* **Command-line Variables**: Variables specifically designed to be set during a command-line invocation of `make`. These variables also modify state for all instances and sub-instances under a given Makefile.
+* **Command-line Variables (%C%)**: Variables specifically designed to be set during a command-line invocation of `make`. These variables also modify state for all instances and sub-instances under a given Makefile.
 
-* **Local Variables**: Variables whose value is valid only on the Make instance where they are defined.
+* **Local Variables (%L%)**: Variables whose value is valid only on the Make instance where they are defined.
 
 * **Private Variables**: Undocumented variables which are either deprecated or aren't meant to be used.
 
