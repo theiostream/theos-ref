@@ -1,6 +1,6 @@
 # Variables
 
-Theos provides variables that can be modified to control the build process on a global and per-instance basis.
+Theos provides variables that can be modified to control the build process on a global and per-[instance](./2_1_2_INSTANCES.md) basis.
 
 For general information on *make Variables*, refer to [*Using Variables*](http://www.gnu.org/software/make/manual/make.html#Using-Variables) in the GNU make Manual.
 
