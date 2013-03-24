@@ -40,35 +40,35 @@ Specifies additional flags to be passed into the C and C++ compiler upon compila
 It is used during compilation of C, Objective-C, C++ and Objective-C++ files.
 
 Defaults to empty.
-Defined on `common.mk`.
+Defined in `common.mk`.
 
 ###### ADDITIONAL_CCFLAGS %L%
 Specifies additional flags to be passed into the C++ compiler upon compilation.
 It is used during compilation of C++ and Objective-C++ files.
 
 Defaults to empty.
-Defined on `common.mk`.
+Defined in `common.mk`.
 
 ###### ADDITIONAL_OBJCFLAGS %L%
 Specifies additional flags to be passed into the Objective-C compiler upon compilation.
 It is used during compilation of Objective-C and Objective-C++ files.
 
 Defaults to empty.
-Defined on `common.mk`.
+Defined in `common.mk`.
 
 ###### ADDITIONAL_OBJCCFLAGS %L%
 Specifies additional flags to be passed into the Objective-C++ compiler upon compilation.
 It is used during compilation of Objective-C++ files.
 
 Defaults to empty.
-Defined on `common.mk`.
+Defined in `common.mk`.
 
 ###### ADDITIONAL_LDFLAGS %L%
 Specifies additional flags to be passed into the linker.
 It is used during linking of object files.
 
 Defaults to empty.
-Defined on `common.mk`.
+Defined in `common.mk`.
 
 ###### ADDITIONAL_LOGOSFLAGS %L%
 Specifies additional flags to be passed into the [Logos Preprocessor](http://theiostream.com/logos).
@@ -78,7 +78,7 @@ It is used during preprocessing of Logos files.
 Specifies the compiler optimization flag.
 
 Defaults to `-O2`.
-Defined on `common.mk`.
+Defined in `common.mk`.
 
 ## Miscellaneous
 
@@ -90,7 +90,7 @@ DEPRECATED IN FAVOR OF THE [`debug` SCHEMA](./2_1_1_3_SCHEMATA.md#debug).
 This was written during a Skype conversation with females.
 
 Defaults to `false`.
-Defined on `common.mk`.
+Defined in `common.mk`.
 
 *FLAGS
 
