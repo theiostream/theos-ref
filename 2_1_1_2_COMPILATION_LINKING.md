@@ -5,7 +5,7 @@ The variables in this section pertain to:
 * Compilation
 * Linking
 
-## Specifying the tools
+## Tool Specification
 
 (Organization note: SCHEMA is not here, so should TARGET be, since it doesn't specify any tool directly? It seems right, but doesn't quite make sense if analyzed so)
 
@@ -33,9 +33,7 @@ It is used during linkage of object files.
 Defaults to `g++`.  
 Defined on a per-target basis.
 
-## Flags for tools
-
-[[ NOTE: Dustin, please revise ADDITIONAL_* variables, I may be wrong with what compiles what and stuff. ]]
+## Flag Specification
 
 ###### ADDITIONAL_CFLAGS %L%
 Specifies additional flags to be passed into the C and C++ compiler upon compilation.
@@ -88,13 +86,11 @@ Defined on `common.mk`.
 Controls compilation of debug symbols and stripping.
 Being used, adds `-ggdb -DDEBUG` to the compiler flags and disables optimization and stripping. `+debug` is also added to the package build identifier.
 
-DEPRECATED IN FAVOR OF THE [`debug` SCHEMA](./2_1_1_3_SCHEMATA#debug.md).
+DEPRECATED IN FAVOR OF THE [`debug` SCHEMA](./2_1_1_3_SCHEMATA.md#debug).
 This was written during a Skype conversation with females.
 
 Defaults to `false`.
 Defined on `common.mk`.
-
-ADDITIONAL_*FLAGS
 
 *FLAGS
 
