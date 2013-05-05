@@ -35,38 +35,6 @@ Although, with the use of the `export` directive from Make, those variables will
 
 If one of these are passed in as **command-line variables**, they will also scope for sub-make instances, going against the concept of a local variable. Even not possible at times, the use of variables specifically designed for command-line use are preferred over their local equivalents when defining them from an invocation to the `make` tool.
 
-#### Providing additional flags for build programs.	
-These variables have no default values.
-
-- ADDITIONAL_CFLAGS
-	Additional flags to be passed to the C and C++ compiler every compilation inside the project.
-
-- ADDITIONAL_CCFLAGS
-	Additional flags to be passed to the C++ compiler every compilation inside the project.
-
-- ADDITIONAL_OBJCFLAGS
-	Additional flags to be passed to the Objective-C and Objective-C++ compiler every compilation inside the project.
-
-- ADDITIONAL_OBJCCFLAGS
-	Additional flags to be passed to the Objective-C++ compiler every compilation inside the project.
-
-- ADDITIONAL_LDFLAGS
-	Additional flags to be passed to the linker every link process inside the project.
-
-- ADDITIONAL_LOGOSFLAGS
-	Additional flags to be passed to the Logos Preprocessor when ran inside the project.
-	(check the "Logos" document for more information)
-
-#### Controlling Miscellaneous Build Aspects
-- OPTFLAG
-	The compiler flag for compiler optimization.
-	Its default value is "-O2".
-
-- DEBUG
-	!! Deprecated !! in favor of the DEBUG schema.
-	Accepts 0 and 1, respectively to not enable debug-building or do the opposite.
-	Default value is 0.
-
 #### Setting schemas
 - SCHEMA
 	Special variable.

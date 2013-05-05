@@ -9,29 +9,29 @@ The variables in this section pertain to:
 
 (Organization note: SCHEMA is not here, so should TARGET be, since it doesn't specify any tool directly? It seems right, but doesn't quite make sense if analyzed so)
 
-###### TARGET %S% [RE]
-The system for which Theos is to build projects. Different targets are available on different platforms. Refer to [TARGET flags](./3_1_5_TARGET.md#TARGET) for more information.
+###### TARGET %S%
+The system for which Theos is to build projects. Also defines miscellaneous build aspects.  
+Refer to [TARGET flags](./3_1_5_TARGET.md#TARGET) for more information.
+
+Defaults and availability are platform-wise.
 
 ###### TARGET_CC %R%
 Specifies the path to the C compiler.  
 It is used during compilation of C and Objective-C files.
 
-Defaults to `gcc`.  
-Defined on a per-target basis.
+Defaults and definition on a per-target basis.
 
 ###### TARGET_CXX %R%
 Specifies the path to the C++ compiler.  
 It is used during compilation of C++ and Objective-C++ files.
 
-Defaults to `g++`.  
-Defined on a per-target basis.
+Defaults and definition on a per-target basis.
 
 ###### TARGET_LD %R%
 Specifies the path to the linker.  
 It is used during linkage of object files.
 
-Defaults to `g++`.  
-Defined on a per-target basis.
+Defaults and definition on a per-target basis.
 
 ## Flag Specification
 
@@ -82,18 +82,13 @@ Defined in `common.mk`.
 
 ## Miscellaneous
 
-###### DEBUG (what's the scope?) [DEPRECATED]
+###### DEBUG %TODO% [DEPRECATED]
 Controls compilation of debug symbols and stripping.
 Being used, adds `-ggdb -DDEBUG` to the compiler flags and disables optimization and stripping. `+debug` is also added to the package build identifier.
 
-DEPRECATED IN FAVOR OF THE [`debug` SCHEMA](./2_1_1_3_SCHEMATA.md#debug).
+**DEPRECATED** in favor of the [`debug` SCHEMA](./2_1_1_3_SCHEMATA.md#debug).  
 This was written during a Skype conversation with females.
 
 Defaults to `false`.
 Defined in `common.mk`.
 
-*FLAGS
-
-OPTFLAG
-
-DEBUG -> SCHEMA
