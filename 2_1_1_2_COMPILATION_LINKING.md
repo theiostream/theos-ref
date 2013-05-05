@@ -86,7 +86,7 @@ Defined in `common.mk`.
 Controls compilation of debug symbols and stripping.
 Being used, adds `-ggdb -DDEBUG` to the compiler flags and disables optimization and stripping. `+debug` is also added to the package build identifier.
 
-**DEPRECATED** in favor of the [`debug` SCHEMA](./2_1_1_3_SCHEMATA.md#debug).  
+**DEPRECATED** in favor of the [`debug` SCHEMA](./2_1_1_4_1_DEFAULT_SCHEMATA.md#debug).  
 This was written during a Skype conversation with females.
 
 Defaults to `false`.

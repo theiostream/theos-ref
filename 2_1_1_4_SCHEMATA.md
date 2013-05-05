@@ -19,6 +19,7 @@ Defined in `common.mk`.
 ## Specifying the Schema
 
 Schema properties can be specified with creation of variables with the following format:  
+
 	schemaname.VARIABLE
 
 In this example, if schema of `schemaname` name is enabled, `VARIABLE` will have its value changed.

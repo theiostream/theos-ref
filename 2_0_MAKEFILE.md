@@ -10,6 +10,7 @@ Theos' variables and rules will be documented in the following sections:
 		* Compilation/Linking Variables
 		* Stripping/Signing Variables
 		* Schemas
+			* Theos Schemas
 		* Targets
 		* Instances
 		* Other
