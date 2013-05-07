@@ -6,7 +6,7 @@ This section pertains to:
 
 ## Concept
 
-Schemas are a way to manage a group of [specific master variables](./2_1_1_4_SCHEMATA.md#Affected_Variables) which can have their effect easily turned off or on. An example is the built-in `debug` schema, which when enabled adds extra options to CFLAGS.
+Schemas are a way to manage a group of [specific master variables](./2_1_1_4_SCHEMATA.md#affected-variables) which can have their effect easily turned off or on. An example is the built-in `debug` schema, which when enabled adds extra options to CFLAGS.
 
 ## Enabling
 
