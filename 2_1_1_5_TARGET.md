@@ -69,9 +69,39 @@ Each target has a makefile included to define special behavior through variables
 
 These variables are defined as follows. This section does not focus on the behavior defined by default Theos platforms. For such information, refer to [Theos Default Targets](./2_1_1_5_2_DEFAULT_TARGETS.md).
 
-(NOTE: In this context variables marked as system-wise are usually **only** to be written in this context, and should be considered read-only for other purposes.)
-
 These variables should *only* be set by the target if they are previously undefined, otherwise the user's build configuration might be overriden.
+
+Some rules can also be defined or overriden in these makefiles.
+
+*(NOTE: In this context variables marked as system-wise are usually **only** to be written in this context, and should be considered read-only for other purposes.)*
+
+## Common Variables
+
+By a convention these variables should be placed at `$(THEOS_MAKE_PATH)/targets/_common/<target name>.mk`, and later included by the actual target makefile.
+
+Other variables which can be internally reused across targets should be placed here.
+
+###### TARGET\_EXE\_EXT %S% (String)
+
+Defines the extension for binaries for the target.
+
+Defaults to empty.
+
+###### TARGET\_LIB\_EXT %S% (String)
+
+Defines the extension for libraries for the target.
+
+Defaults to empty.
+
+###### TARGET\_LDFLAGS\_DYNAMICLIB
+
+###### TARGET\_CFLAGS\_DYNAMICLIB
+
+###### \_THEOS\_TARGET\_ONLY\_OBJCFLAGS
+
+###### \_THEOS\_TARGET\_SUPPORTS\_BUNDLES
+
+## Target Variables
 
 ###### SYSROOT %S% (String)
 
@@ -96,6 +126,27 @@ Defaults to empty.
 
 Defines the path of the linker for the target.  
 Should usually be set to the C++ compiler.
+
+Defaults to empty.
+
+###### SDKFLAGS %S% (String)
+
+Defines the compiler flags which define SDK details to be used.  
+This variable is not used by Theos itself internally, and can be overriden. Its use is mainly for querying what such flags are.
+
+Defaults to empty.
+
+###### \_THEOS\_TARGET\_CFLAGS %S% (String)
+
+Defines compiler flags specially from the target.  
+This is usually set to `SDKFLAGS`.
+
+Defaults to empty.
+
+###### \_THEOS\_TARGET\_LDFLAGS %S% (String)
+
+Defines linker flags specially from the target.  
+This is usually set to `SDKFLAGS`, plus `-multiply_defined suppress`.
 
 Defaults to empty.
 
@@ -127,5 +178,17 @@ Defaults to empty.
 ###### TARGET\_CODESIGN\_FLAGS
 
 Defines the flags for the codesigning tool.
+
+Defaults to empty.
+
+###### TARGET\_PRIVATE\_FRAMEWORK\_PATH
+
+The path to private frameworks inside the sysroot.
+
+Defaults to empty.
+
+###### ARCHS
+
+Defines the architecture of the output object files for the target.
 
 Defaults to empty.
