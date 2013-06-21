@@ -1,4 +1,4 @@
- Targets and Platforms
+# Targets and Platforms
 
 This section pertains to:
 
@@ -77,7 +77,7 @@ Some rules can also be defined or overriden in these makefiles.
 
 *(NOTE: In this context variables marked as system-wise are usually **only** to be written in this context, and should be considered read-only for other purposes.)*
 
-## Common Variables
+### Common Variables
 
 By a convention these variables should be placed at `$(THEOS_MAKE_PATH)/targets/_common/<target name>.mk`, and later included by the actual target makefile.
 
@@ -103,7 +103,7 @@ Defaults to empty.
 
 ###### \_THEOS\_TARGET\_SUPPORTS\_BUNDLES
 
-## Target Variables
+### Target Variables
 
 ###### TARGET\_CC %S% (String)
 
