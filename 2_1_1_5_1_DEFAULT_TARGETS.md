@@ -10,13 +10,17 @@ This document will be divided between targets by platform. When documented, `TAR
 
 ### iphone (iPhone OS)
 
+#### `TARGET` flags
+
 For this target, the `TARGET` variable flags that can be applied are:
 
 * (Optional) `clang` Flag: If set to `clang`, `clang` is used as the C/C++ compiler instead of `gcc`.
 * SDK Version Flag: Defines the SDK version for the build. If empty, defaults to the latest SDK version found.
 * Deployment Target Flag: Defines the deployment target for the build, represented by an iPhone OS version number. If empty, defaults to `3.0`.
 
-The following variables also define behavior for this target:
+#### Variables
+
+Variables which define behavior of this target's configuratiuon are:
 
 ###### SYSROOT
 
@@ -36,6 +40,8 @@ Defaults to:
 * If SDK version is < 6.0, and deployment target is >= 3.0, `armv6 armv7`;
 * If SDK version is < 6.0, and deployment target is < 3.0, `armv6`.
 
+#### Tools
+
 Tools are found using [xcrun(1)](http://developer.apple.com/documentation/Darwin/Reference/ManPages/man1/xcrun.1.html), with parameter `-sdk iphoneos`. The tools are defined as follows:
 
 * C Compiler: If `TARGET` flag `clang` was activated, `clang`. Otherwise, `gcc`.
@@ -45,10 +51,12 @@ Tools are found using [xcrun(1)](http://developer.apple.com/documentation/Darwin
 * codesign\_allocate: Found using `xcrun(1)` flag `-find codesign_allocate`.
 * codesign: `ldid`.
 
+#### Flags
+
 Regarding the defaults of `strip` and codesigning tool flags:
 
 * Flags for `strip` default to `-x`.
-* Flags for the codesigning tool default to `-S`.  
+* Flags for the codesigning tool default to `-S`.
 
 For information regarding changing compiler/linker flags, refer to [Compiler/Linker Variables](./2_1_1_2_COMPILATION_LINKING.md).
 
