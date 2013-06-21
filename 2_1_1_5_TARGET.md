@@ -16,6 +16,8 @@ TARGET flags are split by colons (`:`), and different targets may parse these fl
 
 For more information on how Theos' default targets handle flags, read [Theos Default Targets](./2_1_1_5_1_DEFAULT_TARGETS.md). This document focuses on the behavior of Theos regarding targets.
 
+Theos Targets should never directly read from `TARGET`. For more information, refer to [\_THEOS\_TARGET\_ARG\_X](nolink).
+
 ## Platforms
 
 Platforms are automatically picked by Theos through the output of `uname -s` (kernel name). For more information on this tool, refer to [uname(1)](http://linux.die.net/man/1/uname).
@@ -103,13 +105,6 @@ Defaults to empty.
 
 ## Target Variables
 
-###### SYSROOT %S% (String)
-
-Defines the system root (*sysroot*) of the target.  
-This variable should not be defined if this is a native target.
-
-Defaults to empty.
-
 ###### TARGET\_CC %S% (String)
 
 Defines the path of the C compiler for the target.
@@ -126,13 +121,6 @@ Defaults to empty.
 
 Defines the path of the linker for the target.  
 Should usually be set to the C++ compiler.
-
-Defaults to empty.
-
-###### SDKFLAGS %S% (String)
-
-Defines the compiler flags which define SDK details to be used.  
-This variable is not used by Theos itself internally, and can be overriden. Its use is mainly for querying what such flags are.
 
 Defaults to empty.
 
@@ -190,5 +178,23 @@ Defaults to empty.
 ###### ARCHS
 
 Defines the architecture of the output object files for the target.
+
+Defaults to empty.
+
+### Target Data Variables
+
+These variables can be read by the target to suit itself to the project's needs.
+
+###### \_\_THEOS\_TARGET\_ARG\_X
+
+Special variable name. Here, *X* is a number which starts on 1.
+
+This variable can be used for querying the Xth flag of the `TARGET` variable, instead of directly parsing the `TARGET` variable.
+
+This variable is empty if the Xth flag of `TARGET` is empty. Otherwise, it is filled with content.
+
+###### SYSROOT
+
+This variable, if defined, specifies the desired system root for the target. Its data should then be considered when setting `_THEOS_TARGET_CFLAGS` and `_THEOS_TARGET_LDFLAGS`.
 
 Defaults to empty.
