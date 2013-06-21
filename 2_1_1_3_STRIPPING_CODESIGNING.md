@@ -29,21 +29,15 @@ Defaults and definition on a per-target basis.
 
 ## Flag Specification
 
-(Should these be actually used or should just instance ones be? And should we document briefly 
+###### TARGET_STRIP_FLAGS %S%
+Specifies flags to be passed into `strip` upon stripping.  
+This variable is an exception to the convention that `TARGET_` variables are meant to be read-only and set only on a per-target basis.
 
-###### TARGET_STRIP_FLAGS %?% [DEPRECATED]
-Specifies flags to be passed into `strip` upon stripping.
-
-**DEPRECATED** in favor of the [STRIP_FLAGS](LINK_NEEDS_PROVIDING) instance variable.
-
-This variable follows the [Target Variable Change Rule](./3_1_5_TARGET.md#VARIABLES).  
 Defaults and definition on a per-target basis.
 
 ###### TARGET_CODESIGN_FLAGS
 Specifies flags to be passed into the codesigning tool upon codesigning.
+This variable is an exception to the convention that `TARGET_` variables are meant to be read-only and set only on a per-target basis.
 
-**DEPRECATED** in favor of the [CODESIGN_FLAGS](LINK_NEEDS_PROVIDING) instance variable.
-
-This variable follows the [Target Variable Change Rule](./3_1_5_TARGET.md#VARIABLES).  
 Defaults and definition on a per-target basis.
 
