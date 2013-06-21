@@ -45,6 +45,11 @@ Tools are found using [xcrun(1)](http://developer.apple.com/documentation/Darwin
 * codesign\_allocate: Found using `xcrun(1)` flag `-find codesign_allocate`.
 * codesign: `ldid`.
 
+Regarding the defaults of `strip` and codesigning tool flags:
+
 * Flags for `strip` default to `-x`.
 * Flags for the codesigning tool default to `-S`.  
-For information regarding changing these settings, refer to [Stripping/Codesigning Variables](./2_1_1_3_STRIPPING_CODESIGNING.md)
+
+For information regarding changing compiler/linker flags, refer to [Compiler/Linker Variables](./2_1_1_2_COMPILATION_LINKING.md).
+
+For information regarding changing `strip`/codesigning tool flags, refer to [Stripping/Codesigning Variables](./2_1_1_3_STRIPPING_CODESIGNING.md).
