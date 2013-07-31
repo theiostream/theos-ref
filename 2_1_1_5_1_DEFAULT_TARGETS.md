@@ -189,7 +189,7 @@ Through the values on `IPHONE_SIMULATOR_ROOT`, installs the staging directory da
 
 TODO.
 
-## Darwin (iPhone OS)
+## Darwin-arm (iPhone OS)
 
 ### iphone/native (iPhone OS)
 
