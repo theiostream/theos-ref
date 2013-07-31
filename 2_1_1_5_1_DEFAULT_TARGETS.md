@@ -56,10 +56,17 @@ Tools are found using [xcrun(1)](http://developer.apple.com/documentation/Darwin
 
 Regarding the flags of building tools as specified by the target:
 
-* Flags for the compiler are `-arch <architecure>` for each defined architecure, `-isysroot <sysroot>` for the system root, and lastly `-D__IPHONE_OS_VERSION_MIN_REQUIRED=__IPHONE_<deployment target>` and `-miphoneos-version-min=<deployment target>` for the deployment target.
-* Flags for the linker are the same as the compiler ones, plus `-multiply_defined suppress`.
+* SDK flags are:
+	* `-arch <architecture>` for each defined architecture
+	* `-isysroot <sysroot>` for the system root
+	* `-D__IPHONE_OS_VERSION_MIN_REQUIRED=__IPHONE_<deployment target>` for the deployment target
+	* `-miphoneos-version-min=<deployment target>` for the deployment target.
+
+* Flags for the compiler are the above SDK flags.
+* Flags for the linker are the above SDK flags, plus `-multiply_defined suppress`.
 * Flags for `strip` default to `-x`.
 * Flags for the codesigning tool default to `-S`.
+* The Private Framework path is defined with `$(SYSROOT)/System/Library/PrivateFrameworks`.
 
 #### Included Common Targets
 
@@ -102,7 +109,7 @@ Regarding the flags of building tools as specified by the target:
 * Flags for the compiler are `-arch <architecure>` for each defined architecure, and `-mmacosx-version-min=<deployment target>` for the deployment target.
 * Flags for the linker are the same as the compiler ones, plus `-multiply_defined suppress`.
 * Flags for `strip` default to `-x`.
-* No flags are defined for the (non-used) codesigning tool.
+* The Private Framework path is defined as `/System/Library/PrivateFrameworks`.
 
 #### Included Common Targets
 
@@ -166,6 +173,7 @@ Regarding the flags of building tools as specified by the target:
 * Flags for the linker are `-multiply_defined suppress`, above SDK flags, plus `-Xlinker -objc_abi_version -Xlinker 2` if SDK version >= 3.2.
 * Flags for `strip` default to `-x`.
 * Flags for the codesigning tool default to `-S`.
+* The Private Framework path is defined as `$(SYSROOT)/System/Library/PrivateFrameworks`.
 
 #### Rules
 
@@ -176,6 +184,68 @@ This target overrides the following rules:
 (goto rules documentation)
 
 Through the values on `IPHONE_SIMULATOR_ROOT`, installs the staging directory data into it. If it is not defined, provides an error message.
+
+#### Included Common Targets
+
+TODO.
+
+## Darwin (iPhone OS)
+
+### iphone/native (iPhone OS)
+
+### iphone (iPhone OS)
+
+#### `TARGET` flags
+
+No `TARGET` flags can be applied for this target.
+
+#### Variables
+
+Variables which define behavior of this target's configuration are:
+
+###### SYSROOT
+
+Defines the system root for the build.  
+
+Defaults to `/var/sdk`.
+
+###### SDKBINPATH
+
+Defines the path of the SDK build tools.
+
+Defaults to `/usr/bin`.
+
+###### SDKTARGET
+
+Defines the tool prefix. ([TODO] A better explanation?)
+
+Defaults to `arm-apple-darwin9`.
+
+#### Tools
+
+Tools are found with the following path format:
+
+	$(SDKBINPATH)/$(SDKTARGET)-<tool name>
+
+The tool names are defined as follows:
+
+* C Compiler: `gcc`.
+* C++ Compiler: `g++`.
+* Linker: The C++ Compiler is used.
+* Strip: Always named `strip`.
+* codesign\_allocate: `codesign_allocate`.
+* codesign: `ldid`.
+
+#### Flags
+
+Regarding the flags of building tools as specified by the target:
+
+* SDK flags are `-isysroot <system root>` for the system root.
+* Flags for the compiler are the SDK flags.
+* Flags for the linker are the SDK flags, plus `-multiply_defined suppress`.
+* Flags for `strip` default to `-x`.
+* Flags for the codesigning tool default to `-S`.
+* The Private Framework path is defined as `$(SYSROOT)/System/Library/PrivateFrameworks`.
 
 #### Included Common Targets
 

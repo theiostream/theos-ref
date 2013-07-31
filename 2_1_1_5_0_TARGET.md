@@ -73,6 +73,8 @@ These variables are defined as follows. This section does not focus on the behav
 
 These variables should *only* be set by the target if they are previously undefined, otherwise the user's build configuration might be overriden.
 
+Before defining these variables, check for `_THEOS_TARGET_LOADED` being undefined. They should only be set if this condition is true.
+
 Some rules can also be defined or overriden in these makefiles.
 
 *(NOTE: In this context variables marked as system-wise are usually **only** to be written in this context, and should be considered read-only for other purposes.)*
@@ -105,6 +107,20 @@ Defaults to empty.
 
 ### Target Variables
 
+###### \_THEOS\_TARGET\_LOADED (Boolean)
+
+Defines whether the target was loaded.  
+Should always be set to `true` on the start of the target Makefile.
+
+Defaults to empty.
+
+###### THEOS\_TARGET\_NAME
+
+Defines the name of the target.  
+Should always be set.
+
+Defaults to empty.
+
 ###### TARGET\_CC %S% (String)
 
 Defines the path of the C compiler for the target.
@@ -127,14 +143,13 @@ Defaults to empty.
 ###### \_THEOS\_TARGET\_CFLAGS %S% (String)
 
 Defines compiler flags specially from the target.  
-This is usually set to `SDKFLAGS`.
 
 Defaults to empty.
 
 ###### \_THEOS\_TARGET\_LDFLAGS %S% (String)
 
 Defines linker flags specially from the target.  
-This is usually set to `SDKFLAGS`, plus `-multiply_defined suppress`.
+Should contain `-multiply_defined suppress`.
 
 Defaults to empty.
 
