@@ -48,7 +48,7 @@ Tools are found using [xcrun(1)](http://developer.apple.com/documentation/Darwin
 * C Compiler: If `TARGET` flag `clang` was activated, `clang`. Otherwise, `gcc`.
 * C++ Compiler: If `TARGET` flag `clang` was activated, `clang++`. Otherwise, `g++`.
 * Linker: The C++ Compiler is used.
-* Strip: Always named `strip`.
+* Strip: `strip`.
 * codesign\_allocate: Found using `xcrun(1)` flag `-find codesign_allocate`.
 * codesign: `ldid`.
 
@@ -98,7 +98,7 @@ Tools are found using [xcrun(1)](http://developer.apple.com/documentation/Darwin
 * C Compiler: If `TARGET` flag `clang` was activated, `clang`. Otherwise, `gcc`.
 * C++ Compiler: If `TARGET` flag `clang` was activated, `clang++`. Otherwise, `g++`.
 * Linker: The C++ Compiler is used.
-* Strip: Always named `strip`.
+* Strip: `strip`.
 * codesign\_allocate: Found using `xcrun(1)` flag `-find codesign_allocate`.
 * codesign: None.
 
@@ -155,7 +155,7 @@ Tools are found using [xcrun(1)](http://developer.apple.com/documentation/Darwin
 * C Compiler: If `TARGET` flag `clang` was activated, `clang`. Otherwise, `gcc`.
 * C++ Compiler: If `TARGET` flag `clang` was activated, `clang++`. Otherwise, `g++`.
 * Linker: The C++ Compiler is used.
-* Strip: Always named `strip`.
+* Strip: `strip`.
 * codesign\_allocate: Found using `xcrun(1)` flag `-find codesign_allocate`.
 * codesign: No tool is assigned.
 
@@ -192,8 +192,6 @@ TODO.
 ## Darwin-arm (iPhone OS)
 
 ### iphone/native (iPhone OS)
-
-### iphone (iPhone OS)
 
 #### `TARGET` flags
 
@@ -232,7 +230,7 @@ The tool names are defined as follows:
 * C Compiler: `gcc`.
 * C++ Compiler: `g++`.
 * Linker: The C++ Compiler is used.
-* Strip: Always named `strip`.
+* Strip: `strip`.
 * codesign\_allocate: `codesign_allocate`.
 * codesign: `ldid`.
 
@@ -251,3 +249,93 @@ Regarding the flags of building tools as specified by the target:
 
 TODO.
 
+## Linux
+
+### iphone (iPhone OS)
+
+#### `TARGET` flags
+
+No `TARGET` flags can be applied for this target.
+
+#### Variables
+
+Variables which define behavior of this target's configuration are:
+
+###### SYSROOT
+
+Defines the system root for the build.
+
+Defaults to `/opt/iphone-sdk-3.0/sysroot`.
+
+###### SDKBINPATH
+
+Defines the path of the SDK build tools.
+
+Defaults to `/opt/iphone-sdk-3.0/prefix/bin`.
+
+###### SDKTARGET
+
+Defines the tool prefix. ([TODO] A better explanation?)
+
+Defaults to `arm-apple-darwin9`.
+
+#### Tools
+
+Tools are found with the following path format:
+
+	$(SDKBINPATH)/$(SDKTARGET)-<tool name>
+
+The tool names are defined as follows:
+
+* C Compiler: `gcc`.
+* C++ Compiler: `g++`.
+* Linker: The C++ Compiler is used.
+* Strip: `strip`.
+* codesign\_allocate: `codesign_allocate`.
+* codesign: `ldid`.
+
+#### Flags
+
+Regarding the flags of building tools as specified by the target:
+
+* SDK flags are `-isysroot <system root>` for the system root.
+* Flags for the compiler are the SDK flags.
+* Flags for the linker are the SDK flags, plus `-multiply_defined suppress`.
+* Flags for `strip` default to `-x`.
+* Flags for the codesigning tool default to `-S`.
+* The Private Framework path is defined as `$(SYSROOT)/System/Library/PrivateFrameworks`.
+
+#### Included Common Targets
+
+TODO.
+
+### linux/native (Linux)
+
+#### `TARGET` flags
+
+* Cross-compiling flag: Specifies the tool prefix.
+
+#### Variables
+
+There are no variables which define extra behavior for this target.
+
+#### Tools
+
+Tools are found with the following path format:
+
+	<cross compiling flag>-<tool name>
+
+* C Compiler: `gcc`.
+* C++ Compiler: `g++`.
+* Linker: The C++ Compiler is used.
+* Strip: `strip`.
+* codesign\_allocate: None.
+* codesign: None.
+
+#### Flags
+
+No flags are specified to any tools by default.
+
+#### Included Common Targets
+
+TODO.
