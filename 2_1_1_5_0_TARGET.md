@@ -7,6 +7,8 @@ This section pertains to:
 
 ## Selecting a target
 
+%INDENT%
+
 ###### TARGET %S% (String)
 
 The system for which Theos is to build projects. Also defines miscellaneous build aspects.  
@@ -18,7 +20,11 @@ For more information on how Theos' default targets handle flags, read [Theos Def
 
 Theos Targets should never directly read from `TARGET`. For more information, refer to [\_THEOS\_TARGET\_ARG\_X](nolink).
 
+%INDENTEND%
+
 ## Platforms
+
+%INDENT%
 
 Platforms are automatically picked by Theos through the output of `uname -s` (kernel name). For more information on this tool, refer to [uname(1)](http://linux.die.net/man/1/uname).
 
@@ -58,7 +64,11 @@ The name of the MD5 Sum generation program in the system.
 
 Defaults to empty.
 
+%INDENTEND%
+
 ## Targets
+
+%INDENT%
 
 Targets are picked by Theos through the Target Name. The Target Name can be defined either on the platform (through the [\_THEOS\_PLATFORM\_DEFAULT\_TARGET](needlink) variable, or through the first flag of the [TARGET](needlink) variable.
 
@@ -80,6 +90,8 @@ Some rules can also be defined or overriden in these makefiles.
 *(NOTE: In this context variables marked as system-wise are usually **only** to be written in this context, and should be considered read-only for other purposes.)*
 
 ### Common Variables
+
+%INDENT%
 
 By a convention these variables should be placed at `$(THEOS_MAKE_PATH)/targets/_common/<target name>.mk`, and later included by the actual target makefile.
 
@@ -105,7 +117,11 @@ Defaults to empty.
 
 ###### \_THEOS\_TARGET\_SUPPORTS\_BUNDLES
 
+%INDENTEND%
+
 ### Target Variables
+
+%INDENT%
 
 ###### \_THEOS\_TARGET\_LOADED (Boolean)
 
@@ -196,7 +212,11 @@ Defines the architecture of the output object files for the target.
 
 Defaults to empty.
 
+%INDENTEND%
+
 ### Target Data Variables
+
+%INDENT%
 
 These variables can be read by the target to suit itself to the project's needs.
 
@@ -213,3 +233,7 @@ This variable is empty if the Xth flag of `TARGET` is empty. Otherwise, it is fi
 This variable, if defined, specifies the desired system root for the target. Its data should then be considered when setting `_THEOS_TARGET_CFLAGS` and `_THEOS_TARGET_LDFLAGS`.
 
 Defaults to empty.
+
+%INDENTEND%
+
+%INDENTEND%

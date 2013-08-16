@@ -12,6 +12,9 @@ Theos' variables and rules will be documented in the following sections:
 		* Schemas
 			* Theos Schemas
 		* Targets
+			* Theos Targets
+			* Theos Platforms
+			* Theos Common Targets
 		* Instances
 		* Other
 		

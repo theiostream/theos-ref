@@ -1,0 +1,93 @@
+@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,200italic,300,600|Anonymous+Pro:400,700,400italic);
+
+body {
+	font-family: 'Source Sans Pro', calibri, helvetica, "sans serif";
+	font-weight: 200;
+}
+body strong {
+	font-weight: 600;
+}
+
+h1, h2, h3, h4, h5 { font-weight: 300; }
+
+code {
+	font-family: 'Anonymous Pro', monospace;
+	font-size: 10pt;
+	margin: .15em;
+	padding: .15em;
+	background-color: #dddddd;
+	border: 1px solid #bbbbbb;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-o-border-radius: 5px;
+}
+
+code strong {
+	font-weight: 700;
+}
+
+code span.required, code span.optional {
+	font-size: 10pt !important;
+}
+
+span.required, span.optional, span.optionalbold {
+	padding-left: .4em;
+	padding-right: .4em;
+	font-size: 9pt;
+	border-radius: 10px;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	-o-border-radius: 10px;
+	border: 1px solid;
+}
+
+span.required {
+	background-color: #ffcccc;
+	border-color: #cc0000;
+	font-weight: bold;
+}
+
+span.optional {
+	background-color: #ffffcc;
+	border-color: #dddd00;
+	font-style: italic;
+}
+
+span.optionalbold {
+	background-color: #ffddaa;
+	border-color: #ffa500;
+	font-weight: bold;
+	font-style: italic;
+}
+
+div.indent {
+	margin-left: 1em;
+	padding-left: 1em;
+	border-left: 1px dashed #dddddd;
+}
+
+code span.comment {
+	font-weight: bold;
+	color: #00007f;
+}
+
+code span.string {
+	font-weight: bold;
+	color: #7f0000;
+}
+
+code span.variable {
+	font-weight: bold;
+	color: #007f00;
+}
+
+/*
+code.lvalue.readonly {
+	border-color: #cc0000;
+}
+
+code.lvalue.readwrite {
+	border-color: #00cc00;
+}
+*/

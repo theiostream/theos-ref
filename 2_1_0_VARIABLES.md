@@ -1,10 +1,16 @@
 # Variables
 
+%INDENT%
+
 Theos provides variables that can be modified to control the build process on a global and per-[instance](./2_1_2_INSTANCES.md) basis.
 
 For general information on *make Variables*, refer to [*Using Variables*](http://www.gnu.org/software/make/manual/make.html#Using-Variables) in the GNU make Manual.
 
+%INDENTEND%
+
 ## Variable Types and Scope
+
+%INDENT%
 
 * **Constants (%R%)**: Variables whose values should not be changed. They are used for querying the build environment and theos settings. They are valid across all Theos Makefiles.
 
@@ -21,3 +27,5 @@ For more detail on the scoping of make variables, refer to [*Recursive Use of Ma
 A Theos convention holds that, save `THEOS_`-prepended variables, lowercase variable names are to be used as Command-Line Variables and uppercase ones to be defined in Makefiles. This will be discussed further on a per-variable basis.
 
 This section of the documentation is split into two main parts: **Master Variables** (which specify global build settings) and **Instance Variables** (which specify instance-specific build settings). For more details on instances, refer to [Section 2.1.2](./2_1_2_INSTANCES.md).
+
+%%INDENTEND%%

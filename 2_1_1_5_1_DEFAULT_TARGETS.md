@@ -8,9 +8,15 @@ This document will be divided between targets by platform. When documented, `TAR
 
 ## Darwin (OSX)
 
+%INDENT%
+
 ### iphone (iPhone OS)
 
+%INDENT%
+
 #### `TARGET` flags
+
+%INDENT%
 
 For this target, the `TARGET` variable flags that can be applied are:
 
@@ -18,7 +24,11 @@ For this target, the `TARGET` variable flags that can be applied are:
 * SDK Version Flag: Defines the SDK version for the build. If empty or set to `latest`, defaults to the latest SDK version found.
 * Deployment Target Flag: Defines the deployment target for the build, represented by an iPhone OS version number. If empty, defaults to `3.0`.
 
+%INDENTEND%
+
 #### Variables
+
+%INDENT%
 
 Variables which define behavior of this target's configuration are:
 
@@ -41,7 +51,11 @@ Defaults to:
 * If SDK version is < 6.0, and deployment target is >= 3.0, `armv6 armv7`;
 * If SDK version is < 6.0, and deployment target is < 3.0, `armv6`.
 
+%INDENTEND%
+
 #### Tools
+
+%INDENT%
 
 Tools are found using [xcrun(1)](http://developer.apple.com/documentation/Darwin/Reference/ManPages/man1/xcrun.1.html), with parameter `-sdk iphoneos`. The tools are defined as follows:
 
@@ -52,7 +66,11 @@ Tools are found using [xcrun(1)](http://developer.apple.com/documentation/Darwin
 * codesign\_allocate: Found using `xcrun(1)` flag `-find codesign_allocate`.
 * codesign: `ldid`.
 
+%INDENTEND%
+
 #### Flags
+
+%INDENT%
 
 Regarding the flags of building tools as specified by the target:
 
@@ -68,9 +86,17 @@ Regarding the flags of building tools as specified by the target:
 * Flags for the codesigning tool default to `-S`.
 * The Private Framework path is defined with `$(SYSROOT)/System/Library/PrivateFrameworks`.
 
+%INDENTEND%
+
 #### Included Common Targets
 
+%INDENT%
+
 TODO.
+
+%INDENTEND%
+
+%INDENTEND%
 
 ### macosx/native (Mac OS X)
 
@@ -188,6 +214,8 @@ Through the values on `IPHONE_SIMULATOR_ROOT`, installs the staging directory da
 #### Included Common Targets
 
 TODO.
+
+%INDENTEND%
 
 ## Darwin-arm (iPhone OS)
 

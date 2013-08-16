@@ -7,6 +7,8 @@ The variables in this section pertain to:
 
 ## Theos Resource Locations
 
+%INDENT%
+
 ###### THEOS %R%
 The path to Theos.
 
@@ -41,7 +43,11 @@ The path where [Theos Modules](./6_0_MODULES.md) are stored.
 
 Defined in *common.mk*.
 
+%INDENTEND%
+
 ## Project Build Locations
+
+%INDENT%
 
 ###### THEOS\_BUILD\_DIR %S%
 The directory which houses a project's object directory, staging directory and built packages.
@@ -59,5 +65,7 @@ Defined in *common.mk*.
 ###### THEOS\_STAGING\_DIR %S%
 The name of the project's [staging](./4_1_INVOKABLE.md#package) directory.
 	
-Defaults to "_".  
+Defaults to "\_".  
 Defined in *common.mk*.
+
+%INDENTEND%

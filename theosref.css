@@ -1,0 +1,11 @@
+@import url("./core.css");
+
+body {
+	/* we need this so the printed version won't have issues */
+	margin-left: 4%;
+}
+
+h6 {
+	margin-bottom: -15px;
+	font-size: 16px;
+}
