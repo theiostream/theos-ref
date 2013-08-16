@@ -24,4 +24,4 @@ Theos Makefiles are written in *make* (specifically, *GNU make*). As such, all M
 
 For a (very) in-depth reference on Make, check the [GNU `make' manual](http://www.gnu.org/software/make/manual/make.html).
 
-%%INDENTEND%%
+%INDENTEND%

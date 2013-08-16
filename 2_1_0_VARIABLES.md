@@ -28,4 +28,4 @@ A Theos convention holds that, save `THEOS_`-prepended variables, lowercase vari
 
 This section of the documentation is split into two main parts: **Master Variables** (which specify global build settings) and **Instance Variables** (which specify instance-specific build settings). For more details on instances, refer to [Section 2.1.2](./2_1_2_INSTANCES.md).
 
-%%INDENTEND%%
+%INDENTEND%

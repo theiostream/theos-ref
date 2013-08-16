@@ -31,7 +31,7 @@ code span.required, code span.optional {
 	font-size: 10pt !important;
 }
 
-span.required, span.optional, span.optionalbold {
+span.deprecated, span.scope, span.readonly {
 	padding-left: .4em;
 	padding-right: .4em;
 	font-size: 9pt;
@@ -42,19 +42,19 @@ span.required, span.optional, span.optionalbold {
 	border: 1px solid;
 }
 
-span.required {
+span.deprecated {
 	background-color: #ffcccc;
 	border-color: #cc0000;
 	font-weight: bold;
 }
 
-span.optional {
+span.scope {
 	background-color: #ffffcc;
 	border-color: #dddd00;
 	font-style: italic;
 }
 
-span.optionalbold {
+span.readonly {
 	background-color: #ffddaa;
 	border-color: #ffa500;
 	font-weight: bold;

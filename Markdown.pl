@@ -275,11 +275,11 @@ sub Markdown {
 	$text =~ s/%INDENTEND%/<\/div>/g;
 
 	# [THEOSREF] %R%/%L% shit.
-	$text =~ s/%R%/<span class="optionalbold">read-only<\/span>/g;
-	$text =~ s/%S%/<span class="optional">system<\/span>/g;
-	$text =~ s/%C%/<span class="optional">command-line<\/span>/g;
-	$text =~ s/%L%/<span class="optional">local<\/span>/g;
-	$text =~ s/%D%/<span class="required">deprecated<\/span>/g;
+	$text =~ s/%R%/<span class="readonly">read-only<\/span>/g;
+	$text =~ s/%S%/<span class="scope">system<\/span>/g;
+	$text =~ s/%C%/<span class="scope">command-line<\/span>/g;
+	$text =~ s/%L%/<span class="scope">local<\/span>/g;
+	$text =~ s/%D%/<span class="deprecated">deprecated<\/span>/g;
 
 	return $text . "\n";
 }
