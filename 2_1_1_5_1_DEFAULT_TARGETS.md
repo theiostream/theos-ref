@@ -100,14 +100,22 @@ TODO.
 
 ### macosx/native (Mac OS X)
 
+%INDENT%
+
 #### `TARGET` Flags
+
+%INDENT%
 
 For this target, the `TARGET` variable flags that can be applied are:
 
 * (Optional) `clang` Flag: If set to `clang`, `clang` is used as the C/C++ compiler instead of `gcc`.
 * Deployment Target Flag: Defines the deployment target for the build, represented by a Mac OS X version number. If empty, no deployment target is applied.
 
+%INDENTEND%
+
 #### Variables
+
+%INDENT%
 
 Variables which define behavior of this target's configuration are:
 
@@ -117,7 +125,11 @@ Defines the architecture for the build.
 
 Defaults to `i386 x86_64`.
 
+%INDENTEND%
+
 #### Tools
+
+%INDENT%
 
 Tools are found using [xcrun(1)](http://developer.apple.com/documentation/Darwin/Reference/ManPages/man1/xcrun.1.html), with parameter `-sdk macosx`. The tools are defined as follows:
 
@@ -128,7 +140,11 @@ Tools are found using [xcrun(1)](http://developer.apple.com/documentation/Darwin
 * codesign\_allocate: Found using `xcrun(1)` flag `-find codesign_allocate`.
 * codesign: None.
 
+%INDENTEND%
+
 #### Flags
+
+%INDENT%
 
 Regarding the flags of building tools as specified by the target:
 
@@ -137,13 +153,25 @@ Regarding the flags of building tools as specified by the target:
 * Flags for `strip` default to `-x`.
 * The Private Framework path is defined as `/System/Library/PrivateFrameworks`.
 
+%INDENTEND%
+
 #### Included Common Targets
 
-??
+%INDENT%
+
+TODO.
+
+%INDENTEND%
+
+%INDENTEND%
 
 ### simulator (iPhone Simulator)
 
+%INDENT%
+
 #### `TARGET` flags
+
+%INDENT%
 
 For this target, the `TARGET` variable flags that can be applied are:
 
@@ -151,7 +179,11 @@ For this target, the `TARGET` variable flags that can be applied are:
 * SDK Version Flag: Defines the SDK version for the build. If empty or set to `latest`, defaults to the latest SDK version found.
 * Deployment Target Flag: Defines the deployment target for the build, represented by an iPhone OS version number. If empty, defaults to `3.0`.
 
+%INDENTEND%
+
 #### Variables
+
+%INDENT%
 
 Variables which define behavior of this target's configuration are:
 
@@ -174,7 +206,11 @@ Defines the root directory of the simulator OS. Is required for installs.
 
 Defaults to empty.
 
+%INDENTEND%
+
 #### Tools
+
+%INDENT%
 
 Tools are found using [xcrun(1)](http://developer.apple.com/documentation/Darwin/Reference/ManPages/man1/xcrun.1.html), with parameter `-sdk iphoneos`. The tools are defined as follows:
 
@@ -185,7 +221,11 @@ Tools are found using [xcrun(1)](http://developer.apple.com/documentation/Darwin
 * codesign\_allocate: Found using `xcrun(1)` flag `-find codesign_allocate`.
 * codesign: No tool is assigned.
 
+%INDENTEND%
+
 #### Flags
+
+%INDENT%
 
 Regarding the flags of building tools as specified by the target:
 
@@ -201,7 +241,11 @@ Regarding the flags of building tools as specified by the target:
 * Flags for the codesigning tool default to `-S`.
 * The Private Framework path is defined as `$(SYSROOT)/System/Library/PrivateFrameworks`.
 
+%INDENTEND%
+
 #### Rules
+
+%INDENT%
 
 This target overrides the following rules:
 
@@ -211,21 +255,39 @@ This target overrides the following rules:
 
 Through the values on `IPHONE_SIMULATOR_ROOT`, installs the staging directory data into it. If it is not defined, provides an error message.
 
+%INDENTEND%
+
 #### Included Common Targets
+
+%INDENT%
 
 TODO.
 
 %INDENTEND%
 
+%INDENTEND%
+
+%INDENTEND%
+
 ## Darwin-arm (iPhone OS)
+
+%INDENT%
 
 ### iphone/native (iPhone OS)
 
+%INDENT%
+
 #### `TARGET` flags
+
+%INDENT%
 
 No `TARGET` flags can be applied for this target.
 
+%INDENTEND%
+
 #### Variables
+
+%INDENT%
 
 Variables which define behavior of this target's configuration are:
 
@@ -247,7 +309,12 @@ Defines the tool prefix. ([TODO] A better explanation?)
 
 Defaults to `arm-apple-darwin9`.
 
+
+%INDENTEND%
+
 #### Tools
+
+%INDENT%
 
 Tools are found with the following path format:
 
@@ -262,7 +329,11 @@ The tool names are defined as follows:
 * codesign\_allocate: `codesign_allocate`.
 * codesign: `ldid`.
 
+%INDENTEND%
+
 #### Flags
+
+%INDENT%
 
 Regarding the flags of building tools as specified by the target:
 
@@ -273,19 +344,39 @@ Regarding the flags of building tools as specified by the target:
 * Flags for the codesigning tool default to `-S`.
 * The Private Framework path is defined as `$(SYSROOT)/System/Library/PrivateFrameworks`.
 
+%INDENTEND%
+
 #### Included Common Targets
+
+%INDENT%
 
 TODO.
 
+%INDENTEND%
+
+%INDENTEND%
+
+%INDENTEND%
+
 ## Linux
+
+%INDENT%
 
 ### iphone (iPhone OS)
 
+%INDENT%
+
 #### `TARGET` flags
+
+%INDENT%
 
 No `TARGET` flags can be applied for this target.
 
+%INDENTEND%
+
 #### Variables
+
+%INDENT%
 
 Variables which define behavior of this target's configuration are:
 
@@ -307,7 +398,11 @@ Defines the tool prefix. ([TODO] A better explanation?)
 
 Defaults to `arm-apple-darwin9`.
 
+%INDENTEND%
+
 #### Tools
+
+%INDENT%
 
 Tools are found with the following path format:
 
@@ -322,7 +417,11 @@ The tool names are defined as follows:
 * codesign\_allocate: `codesign_allocate`.
 * codesign: `ldid`.
 
+%INDENTEND%
+
 #### Flags
+
+%INDENT%
 
 Regarding the flags of building tools as specified by the target:
 
@@ -333,21 +432,41 @@ Regarding the flags of building tools as specified by the target:
 * Flags for the codesigning tool default to `-S`.
 * The Private Framework path is defined as `$(SYSROOT)/System/Library/PrivateFrameworks`.
 
+%INDENTEND%
+
 #### Included Common Targets
+
+%INDENT%
 
 TODO.
 
+%INDENTEND%
+
+%INDENTEND%
+
 ### linux/native (Linux)
+
+%INDENT%
 
 #### `TARGET` flags
 
+%INDENT%
+
 * Cross-compiling flag: Specifies the tool prefix.
+
+%INDENTEND%
 
 #### Variables
 
+%INDENT%
+
 There are no variables which define extra behavior for this target.
 
+%INDENTEND%
+
 #### Tools
+
+%INDENT%
 
 Tools are found with the following path format:
 
@@ -360,10 +479,24 @@ Tools are found with the following path format:
 * codesign\_allocate: None.
 * codesign: None.
 
+%INDENTEND%
+
 #### Flags
+
+%INDENT%
 
 No flags are specified to any tools by default.
 
+%INDENTEND%
+
 #### Included Common Targets
 
+%INDENT%
+
 TODO.
+
+%INDENTEND%
+
+%INDENTEND%
+
+%INDENTEND%

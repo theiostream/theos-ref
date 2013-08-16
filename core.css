@@ -10,6 +10,13 @@ body strong {
 
 h1, h2, h3, h4, h5 { font-weight: 300; }
 
+h3 { font-size: 20px; }
+h4 { font-size: 18px; }
+h6 {
+	font-family: 'Anonymous Pro', monospace;
+	font-size: 16px;
+}
+
 code {
 	font-family: 'Anonymous Pro', monospace;
 	font-size: 10pt;

@@ -1,5 +1,13 @@
 The Theos Documentation (theos-ref)
 
+For generating HTML output:
+- Use ./genhtml.sh
+
+For changing layouting:
+- Change theosref.css
+
+Please contribute to RefMarkup.pl!
+
 For contributing:
 - Please notify theiostream of your intentions. If recommended to contribute, create a fork and make a pull request.
 - Regardless of whether your pull request was merged or deleted, your fork should be deleted unless recommended not to by theiostream.
