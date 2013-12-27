@@ -89,36 +89,6 @@ Some rules can also be defined or overriden in these makefiles.
 
 *(NOTE: In this context variables marked as system-wise are usually **only** to be written in this context, and should be considered read-only for other purposes.)*
 
-### Common Variables
-
-%INDENT%
-
-By a convention these variables should be placed at `$(THEOS_MAKE_PATH)/targets/_common/<target name>.mk`, and later included by the actual target makefile.
-
-Other variables which can be internally reused across targets should be placed here.
-
-###### TARGET\_EXE\_EXT %S% (String)
-
-Defines the extension for binaries for the target.
-
-Defaults to empty.
-
-###### TARGET\_LIB\_EXT %S% (String)
-
-Defines the extension for libraries for the target.
-
-Defaults to empty.
-
-###### TARGET\_LDFLAGS\_DYNAMICLIB
-
-###### TARGET\_CFLAGS\_DYNAMICLIB
-
-###### \_THEOS\_TARGET\_ONLY\_OBJCFLAGS
-
-###### \_THEOS\_TARGET\_SUPPORTS\_BUNDLES
-
-%INDENTEND%
-
 ### Target Variables
 
 %INDENT%
@@ -134,6 +104,18 @@ Defaults to empty.
 
 Defines the name of the target.  
 Should always be set.
+
+Defaults to empty.
+
+###### TARGET\_EXE\_EXT %S% (String)
+
+Defines the extension for binaries for the target.
+
+Defaults to empty.
+
+###### TARGET\_LIB\_EXT %S% (String)
+
+Defines the extension for libraries for the target.
 
 Defaults to empty.
 
@@ -162,10 +144,28 @@ Defines compiler flags specially from the target.
 
 Defaults to empty.
 
+###### TARGET\_CFLAGS\_DYNAMICLIB
+
+The compiler flags to be applied when building a dynamic library for the target.
+
+Defaults to empty.
+
+###### \_THEOS\_TARGET\_ONLY\_OBJCFLAGS
+
+????????
+
+Defaults to empty.
+
 ###### \_THEOS\_TARGET\_LDFLAGS %S% (String)
 
 Defines linker flags specially from the target.  
 Should contain `-multiply_defined suppress`.
+
+Defaults to empty.
+
+###### TARGET\_LDFLAGS\_DYNAMICLIB
+
+The linker flags to be applied when building a dynamic library for the target.
 
 Defaults to empty.
 
@@ -212,6 +212,30 @@ Defines the architecture of the output object files for the target.
 
 Defaults to empty.
 
+###### \_THEOS\_TARGET\_SUPPORTS\_BUNDLES (Boolean)
+
+An unused variable.
+
+Defaults to empty.
+
+###### \_THEOS\_TARGET\_BUNDLE\_INFO\_PLIST\_SUBDIRECTORY
+
+When creating a bundle with `bundle.mk`, the subdirectory where the Info.plist file will be placed.
+
+Defaults to empty.
+
+###### \_THEOS\_TARGET\_BUNDLE\_RESOURCE\_SUBDIRECTORY
+
+When creating a bundle with `bundle.mk`, the subdirectory where the bundle resources will be placed.
+
+Defaults to empty.
+
+###### \_THEOS\_TARGET\_BUNDLE\_BINARY\_SUBDIRECTORY
+
+When creating a bundle with `bundle.mk`, the subdirectory where the bundle main executable will be placed.
+
+Defaults to empty.
+
 %INDENTEND%
 
 ### Target Data Variables
@@ -233,6 +257,16 @@ This variable is empty if the Xth flag of `TARGET` is empty. Otherwise, it is fi
 This variable, if defined, specifies the desired system root for the target. Its data should then be considered when setting `_THEOS_TARGET_CFLAGS` and `_THEOS_TARGET_LDFLAGS`.
 
 Defaults to empty.
+
+%INDENTEND%
+
+### Common Variables
+
+%INDENT%
+
+When some target variables are common across targets (for instance, for all Windows targets, the executable extension will be .exe), by convention a makefile should be created at `$(THEOS_MAKE_PATH)/targets/_common/<common name>.mk`, and this makefile should be included by all targets that have this common variable.
+
+The documentation of which common targets Theos offers and which target variables are usually placed there, refer to [Default Common Targets](./2_1_1_5_3_DEFAULT_COMMON_TARGETS.md).
 
 %INDENTEND%
 

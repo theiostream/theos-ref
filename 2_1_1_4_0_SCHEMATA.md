@@ -25,8 +25,13 @@ Schemas are enabled by their names separated by spaces.
 
 Example:
 
-	# enable schemas "schema1" and "schema2"
-	SCHEMA = schema1 schema2
+%CODE%
+
+\# enable schemas "schema1" and "schema2"
+<br>
+SCHEMA = schema1 schema2
+
+%CODEEND%
 
 Defaults to empty.  
 Defined in `common.mk`.

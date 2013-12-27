@@ -47,6 +47,9 @@ span.deprecated, span.scope, span.readonly {
 	-webkit-border-radius: 10px;
 	-o-border-radius: 10px;
 	border: 1px solid;
+
+	font-family: 'Source Sans Pro', calibri, helvetica, "sans serif";
+	font-weight: 200;
 }
 
 span.deprecated {
