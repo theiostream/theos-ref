@@ -15,14 +15,15 @@ Theos' variables and rules will be documented in the following sections:
 			* Theos Targets
 			* Theos Platforms
 			* Theos Common Targets
-		* Instances
+		* Instance Specifiers
 		* Other
 		
 	* Instance Variables
-		* Instance Specifiers
+		* Instances
 		* Instance Variables
 			* Bundles
 				* Applications
+				* Frameworks
 			* Libraries
 				* Tweaks
 			* Tools
