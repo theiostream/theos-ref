@@ -7,12 +7,12 @@ $text = "<link href=\"../theosref.css\" rel=\"stylesheet\">\n\n";
 while (<>) { $text .= $_; }
 
 # [THEOSREF] Change %INDENT% to css indent.
-$text =~ s/%INDENT%\n/<div class="indent">/g;
-$text =~ s/\R%INDENTEND%/<\/div>/g;
+$text =~ s/%INDENT%[\r\n]?/<div class="indent">/g;
+$text =~ s/[\r\n]?%INDENTEND%/<\/div>/g;
 
 # Fix %CODE%
-$text =~ s/%CODE%\R/<div class="indent"><code style="display:block;">/g;
-$text =~ s/\R%CODEEND%/<\/code><\/div>/g;
+$text =~ s/%CODE%[\r\n]?/<div class="indent"><code style="display:block;">/g;
+$text =~ s/[\r\n]?%CODEEND%/<\/code><\/div>/g;
 
 # [THEOSREF] %R%/%L% shit.
 $text =~ s/%R%/<span class="readonly">read-only<\/span>/g;
